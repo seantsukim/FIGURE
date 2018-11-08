@@ -19,12 +19,6 @@ public class weapon : MonoBehaviour {
 
 	void fire()
 	{
-		//Debug.Log("Pew!");
-		/*
-		Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-		Vector2 fireCoordinates = new Vector2(fireOrigin.transform.position.x, fireOrigin.transform.position.y);
-		RaycastHit2D hit = Physics2D.Raycast(fireCoordinates, mousePos - fireCoordinates, 1000);
-		*/
 		var newBullet = (GameObject)Instantiate(bullet, fireOrigin.position, fireOrigin.rotation);
 		newBullet.GetComponent<Rigidbody2D>().velocity = newBullet.transform.right * bulletSpeed;
 
